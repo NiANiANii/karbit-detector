@@ -1,20 +1,29 @@
-# Dockerfile untuk development karbit-detector
-FROM oven/bun:1-alpine
+# Multi-stage build untuk production karbit-detector
+FROM oven/bun:1-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package.json bun.lock ./
 
-# Install dependencies dengan npm
-RUN bun install
+# Install dependencies (production + dev untuk build)
+RUN bun install --frozen-lockfile
 
 # Copy source code
 COPY . .
 
-# Expose port untuk vite dev server
-EXPOSE 3000
+# Build production assets
+RUN bun run build
 
-# Start development serverni
-CMD ["bun", "run", "dev"]
+# Production stage - minimal image dengan static files
+FROM oven/bun:1-alpine
+
+WORKDIR /app
+
+# Copy built assets dari builder stage
+COPY --from=builder /app/dist ./dist
+
+# Tidak perlu expose port karena nginx-service yang handle
+# Hanya simpan static files untuk di-serve nginx
+
+CMD ["echo", "Static files ready in /app/dist"]
