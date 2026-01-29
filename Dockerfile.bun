@@ -1,0 +1,20 @@
+# Alternative Dockerfile menggunakan Bun
+FROM oven/bun:1-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json bun.lock ./
+
+# Install dependencies
+RUN bun install
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 5173
+
+# Start dev server
+CMD ["bun", "run", "dev"]
