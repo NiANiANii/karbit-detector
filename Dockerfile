@@ -23,7 +23,8 @@ WORKDIR /app
 # Copy built assets dari builder stage
 COPY --from=builder /app/dist ./dist
 
-# Tidak perlu expose port karena nginx-service yang handle
-# Hanya simpan static files untuk di-serve nginx
+# Expose port untuk web server
+EXPOSE 3000
 
-CMD ["echo", "Static files ready in /app/dist"]
+# Serve static files menggunakan bun's built-in server
+CMD ["bun", "x", "serve", "-s", "dist", "-l", "3000"]
