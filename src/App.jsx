@@ -44,9 +44,6 @@ function App() {
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 max-w-6xl mx-auto w-full">
           <div className="flex items-center gap-3">
             <div className="relative group">
-              <div className="h-11 w-11 rounded-full bg-gradient-tenshi flex items-center justify-center shadow-lg transition-all group-hover:shadow-xl group-hover:scale-110 animate-glow-soft">
-                <span className="text-2xl">👼</span>
-              </div>
               <span className="absolute -top-1 -right-1 text-lg animate-sparkle">✨</span>
             </div>
             <div>
