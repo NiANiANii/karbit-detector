@@ -97,7 +97,26 @@ function App() {
                     Temukan seberapa <span className="font-bold text-primary">KARBIT</span> kamu berdasarkan karakter anime favorit dengan sistem ethereal kami
                   </p>
                   
-                  
+                  <div className="flex gap-3 justify-center lg:justify-start pt-4 flex-wrap">
+                    <div className="group px-5 py-3 bg-accent/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-secondary/40 hover:border-secondary hover:shadow-xl transition-all cursor-default hover:-translate-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl group-hover:scale-110 transition-transform">🎌</span>
+                        <span className="font-bold text-foreground">Anime</span>
+                      </div>
+                    </div>
+                    <div className="group px-5 py-3 bg-accent/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-primary/40 hover:border-primary hover:shadow-xl transition-all cursor-default hover:-translate-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl group-hover:scale-110 transition-transform">💫</span>
+                        <span className="font-bold text-foreground">Kawaii</span>
+                      </div>
+                    </div>
+                    <div className="group px-5 py-3 bg-accent/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-secondary/40 hover:border-secondary hover:shadow-xl transition-all cursor-default hover:-translate-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl group-hover:scale-110 transition-transform">🎀</span>
+                        <span className="font-bold text-foreground">#BitKarbit</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 
                 {/* Right Side - Mascot */}
